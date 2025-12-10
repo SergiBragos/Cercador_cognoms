@@ -1,0 +1,64 @@
+/* El body ha de ser flex perquè justify-content funcioni */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;   /* o center si vols centrat verticalment */
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(135deg, rgb(255, 78, 137), rgb(112, 222, 255));
+  font-family: Arial, sans-serif;
+}
+
+/* Quadre blanc centrat */
+.container {
+  width: 90%;
+  max-width: 960px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-container{
+  display: flex;
+  justify-content: center;
+}
+
+/* Espais del formulari */
+.form-group {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+/* Estètica de la taula */
+#resposta{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 60%;
+  padding: 20px;
+}
+
+table th, table td {
+  border: 1px solid #000000;
+  padding: 8px;
+  text-align: center;
+  font-weight: lighter;
+  background: #f3f3f3;
+}
+
+.capçalera{
+  font-weight: bolder;
+  background: #dddddd;
+}
+
+
