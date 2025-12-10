@@ -56,6 +56,7 @@ function createHTMLtext(count, cognom, country){
   document.getElementById("resposta").appendChild(taula);
 }
 
+//Diccionari que conté tots els països i els seus codis per tal que apareguin amb el nom sencer a la web (i no el codi de 2 lletres).
 const countries = {
   AF: { name: "Afghanistan", region: "Asia" },
   AL: { name: "Albania", region: "Europe" },
