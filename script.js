@@ -29,7 +29,11 @@ function createHTMLtext(count, cognom, country){
   const titlePercentage = document.createElement("th");
   titlePercentage.textContent = "Incidència";
   titlePercentage.classList.add("capçalera");
+  const titleRegion = document.createElement("th");
+  titleRegion.textContent = "Regió";
+  titleRegion.classList.add("capçalera");
   const fila0 = document.createElement("tr");
+  fila0.appendChild(titleRegion);
   fila0.appendChild(titleCountry);
   fila0.appendChild(titlePercentage);
   taula.appendChild(fila0);
@@ -38,9 +42,14 @@ function createHTMLtext(count, cognom, country){
   country.forEach(element => {
 
     const countryName = countries[element.country_id]["name"];
+    const countryRegion = countries[element.country_id]["region"];
     const probability = element.probability;
     const fila = document.createElement("tr");
     taula.appendChild(fila);
+
+    casellaRegion = document.createElement("th");
+    colRegion = fila.appendChild(casellaRegion);
+    colRegion.textContent = countryRegion;
 
     casellaCountry = document.createElement("th");
     colCountry = fila.appendChild(casellaCountry);
