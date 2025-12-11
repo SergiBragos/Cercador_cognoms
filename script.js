@@ -20,10 +20,17 @@ async function getInfo(event){
 }
 
 function createHTMLtext(count, cognom, country){
-  resposta.innerHTML = ""; //esborra resultats anteriors
+  resposta.innerHTML = ""; //esborra resultats anteriors al div "resposta"
+  
+   //Crear un element de text amb l'explicació del cognom
   const textResposta = document.createElement("p");
+  textResposta.textContent = `El cognom ${cognom} apareix ${count} vegades. Es reparteix entre les següents nacionalitats:`;
+
+  //Crear una taula
   const taula = document.createElement("table");
-  const titleCountry = document.createElement("th");
+  
+  //Crear una capçalera amb país, incidència i regió
+  const titleCountry = document.createElement("th"); 
   titleCountry.textContent = "País";
   titleCountry.classList.add("capçalera");
   const titlePercentage = document.createElement("th");
@@ -32,13 +39,15 @@ function createHTMLtext(count, cognom, country){
   const titleRegion = document.createElement("th");
   titleRegion.textContent = "Regió";
   titleRegion.classList.add("capçalera");
+
+  //Afegir els elements de la capçalera a la primera fila de la taula
   const fila0 = document.createElement("tr");
   fila0.appendChild(titleRegion);
   fila0.appendChild(titleCountry);
   fila0.appendChild(titlePercentage);
   taula.appendChild(fila0);
-  textResposta.textContent = `El cognom ${cognom} apareix ${count} vegades. Es reparteix entre les següents nacionalitats:`;
 
+  //Amb cada resultat de país del cognom es crea una fila amb les dades del país, regió i incidència.
   country.forEach(element => {
 
     const countryName = countries[element.country_id]["name"];
@@ -61,6 +70,7 @@ function createHTMLtext(count, cognom, country){
 
   });
 
+  //Afegir el text i la taula a l'element "resposta" (és un div buit)
   document.getElementById("resposta").appendChild(textResposta);
   document.getElementById("resposta").appendChild(taula);
 }
